@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PT Integra Ananta Raya</title>
-<link rel="icon" type="image/png" href="./assets/Logo.png">
+<link rel="icon" type="image/png" href="https://drive.amfphub.com/api/public/dl/EHrUpcu_?inline=true">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -93,8 +93,19 @@
     border-color:rgba(255,255,255,0.42);
     transform:translateY(-1px);
   }
-  .navlinks, .nav-cta{ }
-  @media(max-width:860px){ .navlinks{display:none;} }
+  .nav-cta .lbl-short, .nav-cta-2 .lbl-short{display:none;}
+  @media(max-width:860px){
+    .navlinks{display:none;}
+    nav{padding:12px 16px; gap:10px;}
+    .brand > div{width:42px !important; height:42px !important;}
+    .nav-ctas{gap:6px; flex-shrink:1; min-width:0;}
+    .nav-cta, .nav-cta-2{
+      padding:7px 10px; font-size:11px; line-height:1.2; border-radius:5px;
+      white-space:nowrap;
+    }
+    .nav-cta .lbl-full, .nav-cta-2 .lbl-full{display:none;}
+    .nav-cta .lbl-short, .nav-cta-2 .lbl-short{display:inline;}
+  }
 
   /* ---------- HERO ---------- */
   .hero{
@@ -169,6 +180,16 @@
     max-width:560px; color:rgba(255,255,255,0.72); font-size:16px; margin-top:22px;
   }
   .hero-ctas{display:flex; gap:14px; margin-top:38px; flex-wrap:wrap;}
+  @media(max-width:560px){
+    .hero-ctas{gap:10px;}
+    .hero-ctas .btn-primary, .hero-ctas .btn-ghost{
+      flex:1 1 calc(50% - 5px); min-width:0; justify-content:center;
+      padding:11px 12px; font-size:12.5px;
+    }
+    .hero-ctas .btn-ghost .lbl-full{display:none;}
+    .hero-ctas .btn-ghost .lbl-short{display:inline;}
+  }
+  .hero-ctas .btn-ghost .lbl-short{display:none;}
   .btn-primary{
     background:var(--amber); color:var(--navy); font-weight:700; font-family:'Space Grotesk';
     padding:15px 28px; border-radius:7px; font-size:14.5px; display:inline-flex; align-items:center; gap:8px;
@@ -382,6 +403,13 @@
     position:relative; z-index:2; border-top:1px solid rgba(255,255,255,0.1);
     background:rgba(6,20,34,0.35);
   }
+  .footer-main > .wrap{
+    padding-left:32px; padding-right:32px;
+    box-sizing:border-box;
+  }
+  @media(max-width:720px){
+    .footer-main > .wrap{padding-left:20px; padding-right:20px;}
+  }
   .footer-grid{
     display:grid; grid-template-columns:1.4fr 1fr 1fr 1.2fr; gap:40px;
     padding:60px 0 44px;
@@ -418,9 +446,13 @@
   .footer-col a:hover::after{width:100%;}
 
   footer{
-    border-top:1px solid rgba(255,255,255,0.08); padding:22px 0;
+    border-top:1px solid rgba(255,255,255,0.08);
+    padding:22px 0 calc(24px + env(safe-area-inset-bottom, 0px));
     display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
     font-size:12.5px; color:rgba(255,255,255,0.4); position:relative; z-index:2;
+  }
+  @media(max-width:560px){
+    footer{flex-direction:column; align-items:flex-start; gap:6px;}
   }
   footer a{color:rgba(255,255,255,0.55); transition:color .18s ease;}
   footer a:hover{color:#fff;}
@@ -432,7 +464,7 @@
   <nav>
     <div class="brand">
       <div style="width: 50px; height: 50px;">
-        <img src="./assets/Logo.png" alt="INATRA">
+        <img src="https://drive.amfphub.com/api/public/dl/EHrUpcu_?inline=true" alt="INATRA">
       </div>
     </div>
     <div class="navlinks">
@@ -443,8 +475,8 @@
       <a href="#partners">Partners</a>
     </div>
     <div class="nav-ctas">
-      <a href="#contact" class="nav-cta">Hubungi Kami</a>
-      <a target="_blank" href="./assets/company-profile.pdf" class="nav-cta-2">Company Profile</a>
+      <a href="#contact" class="nav-cta"><span class="lbl-full">Hubungi Kami</span><span class="lbl-short">Hubungi</span></a>
+      <a target="_blank" href="./assets/company-profile.pdf" class="nav-cta-2"><span class="lbl-full">Company Profile</span><span class="lbl-short">Company Profile</span></a>
     </div>
   </nav>
 </header>
@@ -455,10 +487,10 @@
     <!-- <div class="eyebrow">PT INTEGRA ANANTA RAYA</div> -->
     <h1>Integrated logistics &amp; <em>one‑stop</em><br> spare parts, built for industry.</h1>
     <div class="tagline">"Rise Through Innovation"</div>
-    <p class="lede">Mitra terpercaya untuk kebutuhan logistik, sparepart, fabrikasi, dan safety equipment di sektor pertambangan, kehutanan, dan industrial   berbasis di Cilegon, Banten.</p>
+    <p class="lede">Mitra terpercaya untuk kebutuhan logistik, sparepart, fabrikasi, dan safety equipment di sektor pertambangan, kehutanan, dan industrial.</p>
     <div class="hero-ctas">
       <a href="#contact" class="btn-primary">Hubungi Kami →</a>
-      <a target="_blank" href="./assets/company-profile.pdf" class="btn-ghost">Company Profile</a>
+      <a target="_blank" href="./assets/company-profile.pdf" class="btn-ghost"><span class="lbl-full">Company Profile</span><span class="lbl-short">Profil</span></a>
     </div>
     <div class="hero-pills">
       <span class="pill">Integrated Logistics</span>
@@ -688,19 +720,13 @@
             <div class="ico">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
             </div>
-            <div class="txt"><span class="label">Email</span><span class="val">sales@inatra.co.id/span></div>
+            <div class="txt"><span class="label">Email</span><span class="val">sales@inatra.co.id</span></div>
           </a>
           <a class="row" href="https://inaatra.co.id" target="_blank">
             <div class="ico">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
             </div>
             <div class="txt"><span class="label">Website</span><span class="val">inatra.co.id</span></div>
-          </a>
-          <a class="row" href="https://maps.google.com/?q=Taman+Cilegon+Indah+Blok+H4+No.22+Cilegon" target="_blank">
-            <div class="ico">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            <div class="txt"><span class="label">Alamat</span><span class="val">Taman Cilegon Indah Blok H4 No.22, Kota Cilegon – Banten 42416</span></div>
           </a>
         </div>
       </div>
@@ -720,7 +746,7 @@
     <div class="wrap footer-grid reveal">
       <div class="footer-brand">
         <div class="footer-brand-row">
-          <img src="./assets/Logo.png" alt="INATRA">
+          <img src="https://drive.amfphub.com/api/public/dl/EHrUpcu_?inline=true" alt="INATRA">
           <span>INATRA</span>
         </div>
         <p class="footer-blurb">PT Integra Ananta Raya   Integrated Logistic Provider &amp; One Stop Spare Parts Solution untuk industri pertambangan, kehutanan, dan sektor industrial di Indonesia.</p>
@@ -747,15 +773,15 @@
         <a href="#lines">Safety APD</a>
       </div>
       <div class="footer-col">
-        <h5>Kantor</h5>
-        <a href="https://maps.google.com/?q=Taman+Cilegon+Indah+Blok+H4+No.22+Cilegon" target="_blank">Taman Cilegon Indah Blok H4 No.22, Kota Cilegon – Banten 42416</a>
-        <a target="_blank" href="./assets/company-profile.pdf">Download Company Profile →</a>
+        <h5>Kontak</h5>
+        <a href="tel:+6200000000000">Telepon</a>
+        <a href="mailto:sales@inatra.co.id">sales@inatra.co.id</a>
+        <a target="_blank" href="./assets/company-profile.pdf">Company Profile →</a>
       </div>
     </div>
     <div class="wrap">
       <footer>
         <span>© 2026 PT Integra Ananta Raya. All rights reserved.</span>
-        <span>Link TCI Block C-2A, Cilegon 42426, Banten   Indonesia</span>
       </footer>
     </div>
   </div>
